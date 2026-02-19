@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1] - 2026-02-19
+
+### Fixed
+
+- Update all test `BASE_URL` references to read `AICM_API_BASE` from environment
+  instead of hardcoding port 8001 (now defaults to 8890).
+- Update deprecated `claude-3-5-sonnet-20241022` model references in Anthropic
+  persistent delivery tests to `claude-sonnet-4-20250514`.
+- Remove flaky Fireworks deepseek-r1 cold-start test from OpenAI chat tracker tests.
+- Update `docs/llm_wrappers.md` examples to reflect current SDK patterns for
+  Gemini (`google.genai.Client`), Fireworks (`fireworks.Fireworks`), and Bedrock
+  (Converse API).
+
 ## [0.2.0] - 2026-02-19
 
 ### Removed — BREAKING CHANGES
