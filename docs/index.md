@@ -15,7 +15,12 @@ pass it directly to the client or tracker.
 - [Django](django.md) - Integrate with Django projects
 - [FastAPI](fastapi.md) - Integrate with FastAPI applications
 - [Streamlit](streamlit.md) - Track usage from Streamlit apps
+- [Persistent Delivery](persistent_delivery.md) - Durable SQLite-backed delivery queue
 - [Persistent Queue Manager](persistent_queue_manager.md) - Inspect or repair persistent queues
+- [Querying Costs](costs_query.md) - Query tracked cost data
+- [HeyGen](heygen.md) - HeyGen streaming session tracking
+- [Deepgram](deepgram.md) - Deepgram transcription and TTS tracking
+- [Gemini](gemini.md) - Gemini usage tracking
 
 ## Development
 

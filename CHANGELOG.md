@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.1] - 2026-02-23
+
+### Fixed
+- **Documentation accuracy**: Fix outdated API signatures, config examples, and
+  broken references across 10 doc files.
+  - Remove deprecated `api_id` first argument from all `track()` / `track_async()`
+    examples (`docs/heygen.md`, `docs/deepgram.md`, `docs/django.md`,
+    `docs/fastapi.md`, `docs/tracker.md`, `docs/usage.md`).
+  - Correct config resolution order in `docs/tracker.md`: INI file takes
+    precedence over environment variables (matches `tracker.py` implementation).
+  - Fix INI section name from `[aicostmanager]` to `[tracker]` in
+    `docs/django.md` and `docs/streamlit.md`.
+  - Fix default DB path from `~/.cache/aicostmanager/delivery_queue.db` to
+    `~/.config/aicostmanager/queue.db` in `docs/persistent_delivery.md`,
+    `docs/fastapi.md`, and `README.md`.
+  - Add missing links to `docs/index.md` for `costs_query.md`,
+    `persistent_delivery.md`, `heygen.md`, `deepgram.md`, and `gemini.md`.
+
 ## [0.3.0] - 2026-02-21
 
 ### Added

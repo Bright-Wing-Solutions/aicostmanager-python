@@ -113,7 +113,6 @@ def track_heygen_immediate():
     with Tracker() as tracker:
         for session in sessions:
             result = tracker.track(
-                "heygen",                                      # api_id
                 "heygen::api.heygen.com/v2/streaming.list",  # service_key
                 session["payload"],                           # {"duration": seconds}
                 response_id=session["response_id"],           # session_id
@@ -166,7 +165,6 @@ def track_heygen_persistent():
         
         for session in sessions:
             tracker.track(
-                "heygen",                                      # api_id
                 "heygen::api.heygen.com/v2/streaming.list",  # service_key
                 session["payload"],                           # {"duration": seconds}
                 response_id=session["response_id"],           # session_id
@@ -219,7 +217,6 @@ def sync_heygen_costs_daily():
 
 ### Service Configuration
 
-- **API ID**: `"heygen"`
 - **Service Key**: `"heygen::api.heygen.com/v2/streaming.list"`
 - **Required Payload**: `{"duration": <seconds>}`
 - **Billing**: 30-second minimum per session

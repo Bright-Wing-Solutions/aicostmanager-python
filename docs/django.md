@@ -16,7 +16,7 @@ pip install aicostmanager
 1. Create an `AICM.INI` file in your project root:
 
 ```ini
-[aicostmanager]
+[tracker]
 AICM_API_KEY = sk-api01-...
 # Optional overrides
 AICM_DELIVERY_TYPE = PERSISTENT_QUEUE
@@ -76,7 +76,7 @@ For async views, call `track_async` to run tracking in a worker thread:
 ```python
 async def my_async_view(request):
     tracker = apps.get_app_config("myapp").tracker
-    await tracker.track_async("openai", "gpt-4o-mini", {"input_tokens": 10})
+    await tracker.track_async("openai::gpt-4o-mini", {"input_tokens": 10})
 ```
 
 With these pieces in place, the tracker will flush queued usage when Django

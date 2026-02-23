@@ -25,12 +25,15 @@ Tracker settings can come from several places. When a value is defined in
 multiple locations, the resolution order is:
 
 1. Arguments passed directly to :class:`Tracker` or a delivery class
-2. Environment variables (``AICM_*``)
-3. Values in ``AICM.INI``
+2. Values in ``AICM.INI``
+3. Environment variables (``AICM_*``)
 4. Built-in defaults
 
-For example, an environment variable can override a value stored in the INI
-file:
+For example, an INI value overrides an environment variable:
+
+```bash
+export AICM_TIMEOUT=5.0
+```
 
 ```ini
 # AICM.INI
@@ -38,13 +41,9 @@ file:
 AICM_TIMEOUT=10.0
 ```
 
-```bash
-export AICM_TIMEOUT=5.0
-```
-
 ```python
 from aicostmanager import Tracker
-tracker = Tracker()  # Uses a 5 second timeout
+tracker = Tracker()  # Uses a 10 second timeout (INI wins over env var)
 ```
 
 See [`config.md`](config.md) for the full list of settings.
@@ -258,7 +257,7 @@ app = FastAPI(lifespan=lifespan)
 
 @app.post("/track")
 async def track(payload: dict) -> dict:
-    await app.state.tracker.track_async("openai", "gpt-5-mini", payload)
+    await app.state.tracker.track_async("openai::gpt-5-mini", payload)
     return {"status": "queued"}
 ```
 

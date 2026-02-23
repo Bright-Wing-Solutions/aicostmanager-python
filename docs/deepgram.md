@@ -17,7 +17,6 @@ Example:
 
 ```python
 tracker.track(
-    "deepgram",
     "deepgram::deepgram_websocket_transcription",
     {"model": "nova-3", "language": "en", "duration": 120, "keywords": []},
     response_id="dg-transcription-nova3-en-no-terms",
@@ -38,7 +37,6 @@ Example:
 
 ```python
 tracker.track(
-    "deepgram",
     "deepgram::deepgram_streaming_tts",
     {"model": "aura-2", "char_count": 1500},
     response_id="dg-tts-aura2-1500",

@@ -136,7 +136,7 @@ For real-time insight into the persistent queue, run the `queue-monitor`
 command against the SQLite database created by `PersistentDelivery`:
 
 ```
-uv run queue-monitor ~/.cache/aicostmanager/delivery_queue.db
+uv run queue-monitor ~/.config/aicostmanager/queue.db
 ```
 
 ## Tracking in different environments

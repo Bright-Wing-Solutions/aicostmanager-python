@@ -39,7 +39,7 @@ async def lifespan(app: FastAPI):
     try:
         # Create persistent delivery with intelligent defaults
         # - API key from AICM_API_KEY environment variable
-        # - Database path: ~/.cache/aicostmanager/delivery_queue.db
+        # - Database path: ~/.config/aicostmanager/queue.db
         # - All other settings use sensible defaults
         persistent_delivery = PersistentDelivery()
         
@@ -116,7 +116,7 @@ If the payload construction is CPU heavy, `track_async` will offload it to a
 worker thread:
 
 ```python
-await app.state.tracker.track_async("openai", "gpt-4o-mini", payload)
+await app.state.tracker.track_async("openai::gpt-4o-mini", payload)
 ```
 
 With the tracker created at startup and closed on shutdown, FastAPI services

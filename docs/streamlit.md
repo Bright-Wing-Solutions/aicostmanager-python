@@ -15,7 +15,7 @@ pip install aicostmanager
 Create an `AICM.INI` file next to your Streamlit script:
 
 ```ini
-[aicostmanager]
+[tracker]
 AICM_API_KEY = sk-api01-...
 # Optional overrides
 AICM_DELIVERY_TYPE = PERSISTENT_QUEUE

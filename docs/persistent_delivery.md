@@ -46,7 +46,7 @@ payload = {"api_id": "openai", "service_key": "gpt", "payload": {"tokens": 1}}
 
 # Simple initialization with defaults
 # - API key from AICM_API_KEY environment variable
-# - Database path: ~/.cache/aicostmanager/delivery_queue.db
+# - Database path: ~/.config/aicostmanager/queue.db
 # - Standard configuration defaults
 delivery = PersistentDelivery()
 delivery.enqueue(payload)             # queue for background delivery

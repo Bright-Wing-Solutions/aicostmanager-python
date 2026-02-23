@@ -103,7 +103,7 @@ def shutdown() -> None:
 
 @app.post("/track")
 async def track(payload: dict) -> dict:
-    app.state.tracker.track(payload)
+    app.state.tracker.track("openai::gpt-4o-mini", payload)
     return {"status": "ok"}
 ```
 
